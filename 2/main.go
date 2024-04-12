@@ -14,6 +14,6 @@ func main() {
 }
 
 func handleHome(w http.ResponseWriter, r *http.Request) {
-	log.Println("A request at / came through")
-	fmt.Fprintf(w, "Wrote A Response to the Client")
+	log.Println("A request at / was made to the Server")
+	fmt.Fprintf(w, "A Response was written to the Client")
 }
