@@ -16,7 +16,7 @@ const homeTemplate = `<!DOCTYPE html>
 <body>
     <h1>Pick A Motorcycle</h1>
 <button class="Suzuki"><a href="/suzuki">Suzuki</a></button>
-<button class="Ducati"><a href="/ducati">Ducati</a></button>
+<button class="Honda"><a href="/honda">Honda</a></button>
 <button class="Kawasaki"><a href="/kawasaki">Kawasaki</a></button>
 </body>
 </html>`
@@ -64,7 +64,6 @@ func renderTemplate(w http.ResponseWriter, templateName string, data interface{}
 
 	var buf bytes.Buffer
 	err = t.Execute(&buf, data)
-
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -88,9 +87,9 @@ func serveMotorcycle(w http.ResponseWriter, r *http.Request) {
 func findMotorcycle(brand string) *Motorcycle {
 	var m Motorcycle
 	switch brand {
-	case "ducati":
+	case "honda":
 		m = Motorcycle{
-			Brand: "Ducati",
+			Brand: "Honda",
 			Model: "The Red One",
 		}
 	case "suzuki":
